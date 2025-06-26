@@ -1,4 +1,3 @@
-// Generated from c:/Users/juani/Desktop/prueba/src/main/java/prieba/compilador.g4 by ANTLR 4.13.1
 package prieba;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
