@@ -1,6 +1,6 @@
 === REPORTE DE ANÁLISIS SEMÁNTICO ===
 Generado por: Compilador ANTLR4
-Fecha: 2025-06-26T16:22:06.250739500
+Fecha: 2025-06-26T18:53:21.879094100
 
 RESUMEN EJECUTIVO:
 - Errores semánticos: 0

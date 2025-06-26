@@ -1,0 +1,11 @@
+int suma(int a, int b) {
+    int resultado = a + b;
+    return resultado;
+}
+
+int main() {
+    int x = 5;
+    int y = 3;
+    int result = suma(x, y);
+    return result;
+}
