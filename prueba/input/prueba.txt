@@ -1,0 +1,9 @@
+int suma_simple(int x, int y){
+    return x + y;
+}
+
+int main(){
+    int a; 
+    a = 10;
+    suma_simple(a,5);
+}
