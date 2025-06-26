@@ -1,0 +1,28 @@
+int main() {
+    // Error: variable no definida
+    x = 10;
+    
+    // Error: redefinición de variable
+    int y = 5;
+    int y = 10;
+    
+    // Error: tipo incompatible
+    int z = "hola";
+    
+    // Error: función no definida
+    int resultado = funcionInexistente(5);
+    
+    // Error: número incorrecto de argumentos
+    suma(10);
+    
+    // Error: tipo de retorno incorrecto
+    return "texto";
+}
+
+int suma(int a, int b) {
+    // Error: retorna string en función int
+    return "resultado";
+}
+
+// Error: función no definida pero llamada
+int multiplicar(int a, int b);

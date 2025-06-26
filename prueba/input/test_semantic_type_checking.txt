@@ -1,0 +1,59 @@
+int testTipos() {
+    // Declaraciones básicas
+    int entero = 42;
+    float flotante = 3.14f;
+    double doble = 2.718281828;
+    char caracter = 'A';
+    bool booleano = true;
+    
+    // Operaciones aritméticas válidas
+    int suma_int = entero + 5;
+    float suma_float = flotante + entero; // int se convierte a float
+    double suma_double = doble + flotante; // float se convierte a double
+    
+    // Operaciones de comparación
+    bool comp1 = entero > 10;
+    bool comp2 = flotante <= doble;
+    bool comp3 = caracter == 65; // 'A' == 65
+    
+    // Operaciones lógicas
+    bool logica1 = booleano && (entero > 0);
+    bool logica2 = !booleano || (flotante > 0.0);
+    
+    // Asignaciones con conversión implícita
+    flotante = entero; // int -> float (válido)
+    doble = flotante;  // float -> double (válido)
+    
+    // Operaciones unarias
+    int negativo = -entero;
+    bool negacion = !booleano;
+    
+    return suma_int;
+}
+
+// Error: operaciones inválidas
+int testErroresTipos() {
+    int entero = 10;
+    char caracter = 'B';
+    bool booleano = false;
+    
+    // Error: no se puede asignar string a int
+    entero = "texto";
+    
+    // Error: no se puede hacer módulo con float
+    float resultado = 10.5 % 3;
+    
+    // Error: operación aritmética con bool
+    int suma = entero + booleano;
+    
+    // Error: comparación de tipos incompatibles
+    bool comp = caracter > "string";
+    
+    return entero;
+}
+
+int main() {
+    int resultado1 = testTipos();
+    int resultado2 = testErroresTipos();
+    return 0;
+}

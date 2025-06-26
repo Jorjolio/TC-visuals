@@ -1,0 +1,26 @@
+int suma(int a, int b) {
+    int resultado = a + b;
+    return resultado;
+}
+
+int factorial(int n) {
+    if (n <= 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+int main() {
+    int x = 10;
+    int y = 5;
+    int sumaResult = suma(x, y);
+    int factResult = factorial(5);
+    
+    if (sumaResult > 10) {
+        int temp = sumaResult * 2;
+        sumaResult = temp;
+    }
+    
+    return 0;
+}

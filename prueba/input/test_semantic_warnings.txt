@@ -1,0 +1,26 @@
+int funcionNoUsada(int param) {
+    int variableNoUsada = 10;
+    int parametroNoUsado = param;
+    return 5;
+}
+
+int funcionSinReturn(int x) {
+    if (x > 0) {
+        return x;
+    }
+    // Warning: falta return en else
+}
+
+int main() {
+    int varNoInicializada;
+    int varNoUsada = 5;
+    
+    // Warning: conversión implícita
+    float f = 10;
+    double d = 3.14f;
+    
+    // Warning: usando variable no inicializada
+    int resultado = varNoInicializada + 10;
+    
+    return 0;
+}

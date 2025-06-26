@@ -1,0 +1,58 @@
+int global = 100;
+
+int funcionCompleja(int a, float b, char c) {
+    int local = a;
+    
+    if (local > 0) {
+        int bloqueLocal = local * 2;
+        
+        for (int i = 0; i < 10; i++) {
+            int forLocal = i + bloqueLocal;
+            if (forLocal > 5) {
+                return forLocal;
+            }
+        }
+    }
+    
+    while (local > 0) {
+        local = local - 1;
+        if (local == 50) {
+            break;
+        }
+    }
+    
+    return local;
+}
+
+double operacionesAritmeticas() {
+    int entero = 10;
+    float flotante = 3.5f;
+    double doble = 2.718;
+    char caracter = 'A';
+    
+    // Operaciones válidas con conversiones implícitas
+    double resultado1 = entero + flotante;
+    float resultado2 = entero * flotante;
+    int resultado3 = entero + caracter; // char se convierte a int
+    
+    // Operaciones lógicas
+    bool condicion1 = entero > flotante;
+    bool condicion2 = (entero == 10) && (flotante < 4.0);
+    
+    return resultado1 + resultado2 + resultado3;
+}
+
+int main() {
+    int valor = funcionCompleja(5, 2.5f, 'X');
+    double calculo = operacionesAritmeticas();
+    
+    // Prueba de ámbitos
+    int x = 10;
+    {
+        int x = 20; // Válido: diferente ámbito
+        int y = x + global;
+    }
+    
+    // Aquí x sigue siendo 10
+    return x;
+}
