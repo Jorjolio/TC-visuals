@@ -94,7 +94,36 @@ public class CompilerMain {
             // Generar archivo con el árbol sintáctico
             saveParseTreeToFile(tree, parser, inputFile);
             
-            System.out.println(Colors.GREEN + "\n🎉 ¡COMPILACIÓN EXITOSA!" + Colors.RESET);
+            // 3. ANÁLISIS SEMÁNTICO
+            System.out.println("\n" + Colors.BLUE + "=== FASE 3: ANÁLISIS SEMÁNTICO ===" + Colors.RESET);
+            
+            // Crear el analizador semántico
+            SemanticAnalyzer semanticAnalyzer = new SemanticAnalyzer(sourceCode);
+            
+            // Realizar análisis semántico
+            semanticAnalyzer.visit(tree);
+            
+            // Crear manejador de errores semánticos
+            SemanticErrorHandler errorHandler = new SemanticErrorHandler(sourceCode);
+            errorHandler.processResults(semanticAnalyzer);
+            
+            // Mostrar tabla de símbolos
+            System.out.println("\n" + Colors.BLUE + "=== TABLA DE SÍMBOLOS ===" + Colors.RESET);
+            semanticAnalyzer.getSymbolTable().printSymbolTable();
+            
+            // Verificar si hubo errores semánticos
+            if (errorHandler.hasErrors()) {
+                System.out.println(Colors.RED + "\nCompilación terminada debido a errores semánticos." + Colors.RESET);
+                return;
+            } else {
+                System.out.println(Colors.GREEN + "\n✅ Análisis semántico completado exitosamente." + Colors.RESET);
+                if (errorHandler.hasWarnings()) {
+                    System.out.println(Colors.YELLOW + "⚠️ Se encontraron " + errorHandler.getWarningCount() + " warning(s)." + Colors.RESET);
+                }
+            }
+            
+            System.out.println(Colors.GREEN + "\n🎉 ¡ANÁLISIS COMPLETO EXITOSO!" + Colors.RESET);
+            System.out.println(Colors.BLUE + "Resumen: " + errorHandler.getSummary() + Colors.RESET);
             
         } catch (IOException e) {
             System.err.println(Colors.RED + "Error leyendo el archivo: " + e.getMessage() + Colors.RESET);
