@@ -628,10 +628,20 @@ public class SymbolTable {
                 String color = symbol instanceof FunctionSymbol ? Colors.GREEN : Colors.YELLOW;
                 String status = symbol.isUsed() ? "✓" : "✗";
                 
-                System.out.println(String.format("%s  %s%s %s%s %s(%s) - Línea %d %s", 
-                        indent, color, symbol.getSymbolType(), symbol.getName(), Colors.RESET,
-                        symbol.getType(), status, symbol.getLine(),
-                        symbol.isInitialized() ? "[INIT]" : "[NO-INIT]"));
+                // CORRECCIÓN: Mostrar la signatura completa para funciones
+                if (symbol instanceof FunctionSymbol) {
+                    FunctionSymbol func = (FunctionSymbol) symbol;
+                    System.out.println(String.format("%s  %s%s %s%s - Línea %d [%s] %s", 
+                            indent, color, symbol.getSymbolType(), func.getSignature(), Colors.RESET,
+                            symbol.getLine(), status,
+                            symbol.isInitialized() ? "[INIT]" : "[NO-INIT]"));
+                } else {
+                    // Para variables, mostrar tipo y nombre separadamente
+                    System.out.println(String.format("%s  %s%s %s %s%s - Línea %d [%s] %s", 
+                            indent, color, symbol.getSymbolType(), symbol.getType(), symbol.getName(), Colors.RESET,
+                            symbol.getLine(), status,
+                            symbol.isInitialized() ? "[INIT]" : "[NO-INIT]"));
+                }
             }
         }
     }
