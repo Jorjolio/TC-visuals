@@ -1,0 +1,50 @@
+=== REPORTE DE ANÁLISIS SEMÁNTICO ===
+Generado por: Compilador ANTLR4
+Fecha: 2025-06-26T16:22:06.250739500
+
+RESUMEN EJECUTIVO:
+- Errores semánticos: 0
+- Warnings: 1
+- Estado: EXITOSO
+
+TABLA DE SÍMBOLOS:
+==================
+Símbolos Globales:
+  FUNCIÓN: int suma(int, int)
+    - Definida: Sí
+    - Llamada: Sí
+    - Línea: 1
+  FUNCIÓN: int main()
+    - Definida: Sí
+    - Llamada: No
+    - Línea: 5
+
+WARNINGS:
+=========
+[Warning 1] Línea 8, Columna 4
+Tipo: Variable no usada
+Mensaje: variable 'resultado' declarado pero no usado
+Contexto: int resultado = suma(x, y);
+Recomendación: La variable 'resultado' no se usa. Considere eliminarla si no es necesaria.
+
+RECOMENDACIONES GENERALES:
+==========================
+1. Declaraciones:
+   - Declare todas las variables antes de usarlas
+   - Use nombres descriptivos para variables y funciones
+   - Inicialice las variables en su declaración cuando sea posible
+
+2. Tipos de datos:
+   - Verifique la compatibilidad de tipos en asignaciones y operaciones
+   - Use conversiones explícitas cuando sea necesario
+   - Considere el rango y precisión de los tipos numéricos
+
+3. Funciones:
+   - Verifique que todas las funciones retornen un valor del tipo declarado
+   - Use parámetros const cuando no se modifiquen
+   - Considere eliminar funciones no utilizadas
+
+4. Buenas prácticas:
+   - Elimine variables y parámetros no utilizados
+   - Use nombres que indiquen claramente el propósito
+   - Mantenga las funciones pequeñas y con propósito único
