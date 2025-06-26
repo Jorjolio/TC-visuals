@@ -1,0 +1,14 @@
+int main() {
+    int x = 10          // Error: falta punto y coma
+    int y = 20;
+    
+    if (x > y {         // Error: falta paréntesis de cierre
+        x = y;
+    }
+    
+    for (int i = 0; i < 10; i++) 
+        x = x + 1;      // Error: falta llave de apertura
+    }                   // Error: llave de cierre sin apertura
+    
+    return 0
+}                        // Error: falta punto y coma

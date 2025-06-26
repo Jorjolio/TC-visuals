@@ -1,0 +1,7 @@
+int main() {
+    int var@ = 10;        // Error: caracter @ no válido
+    float 2pi = 3.14;     // Error: identificador no puede empezar con número
+    char c = 'a;          // Error: caracter literal no cerrado
+    string msg = "Hola;   // Error: string no cerrado
+    int válido = 5;       // Error: caracter con acento
+}
